@@ -53,35 +53,36 @@
 </head>
 <body>
     <?php include_once "./partials/header.php"; ?>
-    <main>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 py-4">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Nome Hotel</th>
-                                <th>Descrizione</th>
-                                <th>Parcheggio</th>
-                                <th>Votazione</th>
-                                <th>Distanza dal centro</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach($hotels as $hotel){ ?>
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 py-4">
+                        <table class="table table-striped">
+                            <thead>
                                 <tr>
-                                    <td><?php echo $hotel['name']; ?></td>
-                                    <td><?php echo $hotel['description']; ?></td>
-                                    <td><?php echo $hotel['parking']; ?></td>
-                                    <td><?php echo $hotel['vote']; ?></td>
-                                    <td><?php echo $hotel['distance_to_center']; ?></td>
+                                    <th>Nome Hotel</th>
+                                    <th>Descrizione</th>
+                                    <th>Parcheggio</th>
+                                    <th>Votazione</th>
+                                    <th>Distanza dal centro</th>
                                 </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <?php foreach($hotels as $hotel){ ?>
+                                    <tr>
+                                        <td><?php echo $hotel['name']; ?></td>
+                                        <td><?php echo $hotel['description']; ?></td>
+                                        <td><?php echo $hotel['parking']; ?></td>
+                                        <td><?php echo $hotel['vote']; ?></td>
+                                        <td><?php echo $hotel['distance_to_center']; ?></td>
+                                    </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>    
+        </main>  
+    <?php include_once "./partials/footer.php"; ?>  
 </body>
 </html>

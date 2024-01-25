@@ -8,3 +8,10 @@ header{
     background-color: black;
     
 }
+
+footer{
+    background-color: rgb(51, 51, 51);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
