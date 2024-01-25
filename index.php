@@ -47,8 +47,10 @@
         $parcheggio = $_GET['parking'];
 
         foreach($hotels as $hotel){
-            if($hotel['parking'] == $parcheggio){
-                $tempHotel [] = $hotel;
+            if($parcheggio == "true" && $hotel['parking'] == true){
+                $tempHotel[] = $hotel;
+            } elseif ($parcheggio == "false" && $hotel['parking'] == false) {
+                $tempHotel[] = $hotel;
             }
         }
 
