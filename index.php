@@ -40,6 +40,20 @@
 
     ];
 
+    $filteredHotel = $hotels;
+
+    if(isset($_GET['parking']) && $_GET['parking'] != ""){
+        $filteredHotel = [];
+        $parcheggio = $_GET['parking'];
+
+        foreach($hotels as $hotel){
+            if($hotel['parking'] == $parcheggio){
+                $filteredHotel[] = $hotel;
+            }
+        }
+
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +70,21 @@
         <main>
             <div class="container">
                 <div class="row">
+                    <div class="col-12">
+                        <form action="./index.php" method="GET">
+                            <div class="row">
+                                <div class="col-6 py-5">
+                                    <select name="parking" id="parking" class="form-control">
+                                        <option value="">Seleziona se preferisci il parcheggio</option>
+                                        <option value="true">Si</option>
+                                        <option value="false">No</option>
+                                    </select>  
+                                </div>
+                                <div class="col-6 p-5">
+                                    <button type="submit" class="btn btn-sm btn-success">Invia</button>
+                                </div>
+                        </form>
+                    </div>
                     <div class="col-12 py-4">
                         <table class="table table-striped">
                             <thead>
@@ -68,7 +97,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach($hotels as $hotel){ ?>
+                                <?php foreach($filteredHotel as $hotel){ ?>
                                     <tr>
                                         <td><?php echo $hotel['name']; ?></td>
                                         <td><?php echo $hotel['description']; ?></td>
